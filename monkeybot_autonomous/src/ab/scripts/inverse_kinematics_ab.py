@@ -137,12 +137,6 @@ def inverse_kinematics(configuration, end_state, init_length):
                 
                 if length_sgn == -1:
                     final_adjustment = length_sgn * final_adjustment
-                """
-                print("Found a solution after:", attempt, "attempts.")
-                print("Length:", length)
-                print("Angle:", sum)
-                print("Joint states:", final_adjustment)
-                """
                 break
 
             else:
