@@ -3,6 +3,9 @@ import math
 import numpy as np
 import modern_robotics as mr
 import random
+import rospy
+from std_msgs.msg import Float64MultiArray
+
 
 def joint_tolerance_check(theta):
     check_list = np.zeros(len(theta))
@@ -42,8 +45,8 @@ def angle_precision(total_angle):
     return total_angle
 
 
-def Inverse_Kinematics_home(configuration, end_state, init_length):
-
+def inverse_kinematics(configuration, end_state, init_length):
+    
     # Define the robot's home configuration (M)
     M = np.array([[1, 0, 0, 0],
                 [0, -1, 0, 0],
@@ -143,33 +146,19 @@ def Inverse_Kinematics_home(configuration, end_state, init_length):
                 break
 
             else:
-                print("Inverse kinematics failed to converge. Attempt:", attempt)
+                # print("Inverse kinematics failed to converge. Attempt:", attempt)
                 hundred_max = math.pi*100/180
                 thetalist0 = np.array([random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max),
                                     random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max)])
             
         else:
-            print("Inverse kinematics failed to converge. Attempt:", attempt)
+            # print("Inverse kinematics failed to converge. Attempt:", attempt)
             hundred_max = math.pi*100/180
             thetalist0 = np.array([random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max),
                                     random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max)])
 
-    return final_adjustment
+    return final_adjustment *math.pi/180
 
 
-end_state = str(input("home state [home] or dock state [dock]?: "))
-length = float(input("Lengde: "))
-configuration = "ab"
 
-# if touch_sensor_a = True:
-#   configuration = ab
-# elif touch_sensor_b = True:
-#   configuraiton = ba
-# else:
-#   begge toucher. Finne kul løsning
-
-
-x = Inverse_Kinematics_home(configuration, end_state, length)
-
-print(x)
 
