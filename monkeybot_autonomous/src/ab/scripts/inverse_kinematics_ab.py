@@ -105,9 +105,10 @@ def inverse_kinematics(configuration, end_state, init_length):
     ev = 1e-50
     attempt = 0
 
+    rospy.loginfo("Calculating inverse kinematics...")
     while True:
         if attempt == 1000:
-            print("Was not able to find a solution after 1000 attempts. Aboarts operation")
+            rospy.loginfo("Was not able to find a solution after 1000 attempts. Aboarts operation")
             break
 
         attempt += 1
