@@ -6,8 +6,8 @@ def set_config(sensor_list_a, sensor_list_b):
     total_a = sum(sensor_list_a.values())
     total_b = sum(sensor_list_b.values())
 
-    if total_a and total_b < 0.3: 
-        return "both"
+    if total_a < 0.3 and total_b < 0.3: 
+        return "both", total_a, total_b
     else:
         if total_a < total_b:
             return "ab"
