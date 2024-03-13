@@ -3,12 +3,15 @@ import rospy
 import subprocess
 from prox_ab_ba_config import check_proximity
 
+
 def configuration():
     rospy.loginfo("Starting configuration determination.")
     config = check_proximity()
     rospy.loginfo(f"Configuration determined: {config}")
     if config == "both":
-        config = str(input("Enter config [ab/ba]:"))
+        while (config != "ab" and config != "ba"):
+            config = str(input("Enter config [ab/ba]: "))
+           
         
     length = float(input("Enter length:"))
     rospy.loginfo(f"Launching with config: {config} and length: {length}")
