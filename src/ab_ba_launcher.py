@@ -8,12 +8,22 @@ def configuration():
     rospy.loginfo("Starting configuration determination.")
     config = check_proximity()
     rospy.loginfo(f"Configuration determined: {config}")
+
     if config == "both":
-        while (config != "ab" and config != "ba"):
+        while True:
             config = str(input("Enter config [ab/ba]: "))
+            if config == "ab" or config == "ba":
+                break
+            else:
+                rospy.loginfo("Input is not a valid configuration")
            
-        
-    length = float(input("Enter length:"))
+    while True:
+        length = float(input("Enter a length between 0.5, 1.2: "))
+        if 0.5 <= length <=1.2:
+            break
+        else:
+            rospy.loginfo("Input is not a valid value")
+
     rospy.loginfo(f"Launching with config: {config} and length: {length}")
 
     # Launch corresponding Python script based on configuration
