@@ -18,8 +18,8 @@ def configuration():
                 rospy.loginfo("Input is not a valid configuration")
            
     while True:
-        length = float(input("Enter a length between 0.5, 1.2: "))
-        if 0.5 <= length <=1.2:
+        length = float(input("Enter a length between [-0.5, -1.2] or [0.5, 1.2]: "))
+        if 0.5 <= abs(length) <=1.2:
             break
         else:
             rospy.loginfo("Input is not a valid value")
