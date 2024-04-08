@@ -141,13 +141,13 @@ def inverse_kinematics(configuration, end_state, init_length):
 
             else:
                 # print("Inverse kinematics failed to converge. Attempt:", attempt)
-                hundred_max = math.pi*100/180
+                hundred_max = math.pi*97/180
                 thetalist0 = np.array([random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max),
                                     random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max)])
             
         else:
             # print("Inverse kinematics failed to converge. Attempt:", attempt)
-            hundred_max = math.pi*100/180
+            hundred_max = math.pi*97/180
             thetalist0 = np.array([random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max),
                                     random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max)])
 
