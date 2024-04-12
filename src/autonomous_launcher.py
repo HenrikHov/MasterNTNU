@@ -39,5 +39,5 @@ def configuration():
         rospy.logerr("Failed to determine configuration")
 
 if __name__ == "__main__":
-    rospy.init_node('configuration_selector')
+    rospy.init_node('autonomous_launcher')
     configuration()
