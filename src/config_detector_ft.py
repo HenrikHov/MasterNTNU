@@ -62,6 +62,6 @@ def check_force():
     return set_config(sensor_readings_a, sensor_readings_b)
 
 if __name__ == "__main__":
-    rospy.init_node('force_check_test', anonymous=True)
+    rospy.init_node('config_detector_ft', anonymous=True)
     configuration = check_force()
     print(f"Configuration: {configuration}")
