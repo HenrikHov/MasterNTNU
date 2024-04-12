@@ -50,6 +50,6 @@ def check_button():
     return set_config(sensor_readings_a, sensor_readings_b)
 
 if __name__ == "__main__":
-    rospy.init_node('button_check_test', anonymous=True)
+    rospy.init_node('config_detector_button', anonymous=True)
     configuration = check_button()
     print(f"Configuration: {configuration}")
