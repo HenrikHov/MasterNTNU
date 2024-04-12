@@ -26,6 +26,6 @@ def check_proximity():
 
 # The following allows this file to be imported as a module without executing any code
 if __name__ == "__main__":
-    rospy.init_node('proximity_check_test', anonymous=True)
+    rospy.init_node('proximity_detection', anonymous=True)
     result = check_proximity()
     print(f"Safe to dock: {result}")
