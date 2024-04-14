@@ -12,6 +12,7 @@ def run_joint_manipulator(end_state, length):
         rospy.logerr(f"Failed to launch joint_manipulator: {e}")
 
 if __name__ == '__main__':
+    rospy.init_node("config_launcher")
     parser = argparse.ArgumentParser(description="Launcher for Joint Manipulator")
     parser.add_argument("--length", type=float, default=1.0, help="Length value")
     args = parser.parse_args()

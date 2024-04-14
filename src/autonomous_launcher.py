@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import rospy
 import subprocess
-from prox_ab_ba_config import check_proximity
+from config_detector import check_proximity
 
 
-def configuration():
+def launch():
     rospy.loginfo("Starting configuration determination.")
     config = check_proximity()
     rospy.loginfo(f"Configuration determined: {config}")
@@ -40,4 +40,6 @@ def configuration():
 
 if __name__ == "__main__":
     rospy.init_node('autonomous_launcher')
-    configuration()
+    launch()
+
+    

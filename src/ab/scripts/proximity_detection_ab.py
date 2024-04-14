@@ -29,3 +29,4 @@ if __name__ == "__main__":
     rospy.init_node('proximity_detection', anonymous=True)
     result = check_proximity()
     print(f"Safe to dock: {result}")
+

@@ -24,7 +24,13 @@ def angle_precision(total_angle):
 
     # Use the absolute value of the second element for sum calculation
     temp_angle = total_angle.copy()
-    temp_angle[1] = abs(temp_angle[1])
+    reversed_angle = 0
+    if temp_angle[1] < 0: 
+        reversed_angle = 1 
+        temp_angle[1] = abs(temp_angle[1])
+    elif temp_angle[1] >  0:
+        reversed_angle = 2
+        temp_angle[1] = -temp_angle[1]
     current_sum = sum(temp_angle)
 
     # Determine whether the target sum is 180 or -180
@@ -40,7 +46,10 @@ def angle_precision(total_angle):
     total_angle[closest_to_zero_index] += adjustment
 
     # Ensure the second element remains negative
-    total_angle[1] = -abs(total_angle[1])
+    if reversed_angle == 1:
+        total_angle[1] = -abs(total_angle[1])
+    elif reversed_angle == 2:
+        total_angle[1] = abs(total_angle[1])
 
     return total_angle
 
@@ -50,7 +59,7 @@ def inverse_kinematics(configuration, end_state, init_length):
     # Define the robot's home configuration (M)
     M = np.array([[1, 0, 0, 0],
                 [0, -1, 0, 0],
-                [0, 0, -1, 1.400],
+                [0, 0, -1, -1.400],
                 [0, 0, 0, 1]])
 
     # Rotation axis for each joint
@@ -60,10 +69,10 @@ def inverse_kinematics(configuration, end_state, init_length):
     w0b = np.array([-1, 0, 0])
 
     # Distance from joint to the end-effector
-    q0a = np.array([-0.1495, 0, 1.400])
-    q3a = np.array([0, 0, 0.8665])
-    q3b = np.array([0, 0, 0.5335])
-    q0b = np.array([0.1495, 0, 0])
+    q0a = np.array([0.1495, 0, -1.400])
+    q3a = np.array([0, 0, -0.8665])
+    q3b = np.array([0, 0, -0.5335])
+    q0b = np.array([-0.1495, 0, 0])
 
 
     w = np.array([w0a, w3a, w3b, w0b])
@@ -87,7 +96,7 @@ def inverse_kinematics(configuration, end_state, init_length):
         length= (-1) * init_length
 
     if end_state == "home":
-        height  = 0.2
+        height  = -0.2
         thetalist0 = np.array([0.2, -0.9, 1.2, 0.7])
 
     elif end_state == "dock":
@@ -152,7 +161,4 @@ def inverse_kinematics(configuration, end_state, init_length):
                                     random.uniform(-hundred_max, hundred_max), random.uniform(-hundred_max, hundred_max)])
 
     return final_adjustment *math.pi/180
-
-
-
 
