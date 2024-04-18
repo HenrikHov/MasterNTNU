@@ -31,25 +31,25 @@ def main(end_state, input_length):
     move_group = moveit_commander.MoveGroupCommander(group_name)
 
     # First movement to the initial end state (home or dock)
-    manipulate("home", input_length)
+    manipulate("home", -input_length)
 
     # Check proximity before docking
     if check_proximity():
         rospy.loginfo("Safe to dock, proceeding with docking maneuver")
 
         # Update joint state for docking
-        manipulate("dock", input_length)
+        manipulate("dock", -input_length)
         rospy.loginfo("Docking completed")
         
     else:
         rospy.loginfo("Not safe to dock, goes to other side")
-        manipulate("home", -input_length)
+        manipulate("home", input_length)
 
         if check_proximity():
             rospy.loginfo("Safe to dock, proceeding with docking maneuver")
 
             # Update joint state for docking
-            manipulate("dock", -input_length)
+            manipulate("dock", input_length)
             rospy.loginfo("Docking completed")
             
         else:
