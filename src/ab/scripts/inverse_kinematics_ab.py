@@ -96,11 +96,11 @@ def inverse_kinematics(configuration, end_state, init_length):
 
     if end_state == "home":
         height  = -0.2
-        thetalist0 = np.array([0.2, -0.9, 1.2, 0.7])
+        thetalist0 = np.array([-0.227, 0.995, -1.204, -0.733])
 
     elif end_state == "dock":
         height = 0
-        thetalist0 = np.array([0.4, -1.1, 1.1, 0.4])
+        thetalist0 = np.array([-0.4, 1.1, -1.1, -0.4])
 
     T = np.array([[1, 0, 0, 0],
                 [0, 1, 0, length],
