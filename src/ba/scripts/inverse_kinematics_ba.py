@@ -59,7 +59,7 @@ def inverse_kinematics(configuration, end_state, init_length):
     # Define the robot's home configuration (M)
     M = np.array([[1, 0, 0, 0],
                 [0, -1, 0, 0],
-                [0, 0, -1, -1.4000],
+                [0, 0, -1, -1.4],
                 [0, 0, 0, 1]])
 
     # Angular velocity for each joint
@@ -72,7 +72,7 @@ def inverse_kinematics(configuration, end_state, init_length):
     q0a = np.array([0.1495, 0, 0])
     q3a = np.array([0, 0, -0.5335])
     q3b = np.array([0, 0, -0.8665])
-    q0b = np.array([-0.1495, 0, -1.4000])
+    q0b = np.array([-0.1495, 0, -1.4])
 
     w = np.array([w0a, w3a, w3b, w0b])
     q = np.array([q0a, q3a, q3b, q0b])
