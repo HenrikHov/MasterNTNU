@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from autonomous_launcher import launch
 
 def walking(input_length):
     walking_distance = 1.2
@@ -17,4 +16,3 @@ def walking(input_length):
         distances[total_steps-1] = diff
     distances[total_steps] = remaining_length
     return distances
-
