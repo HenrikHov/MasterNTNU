@@ -2,17 +2,19 @@ import math
 import numpy as np
 
 def walking(input_length):
-    walking_distance = 1.2
+    step_distance = 1.2
     total_length = input_length
-    max_length = walking_distance
-    total_steps = math.ceil(total_length/max_length)
+    total_steps = math.ceil(total_length/step_distance)
     distances = np.zeros(total_steps)
-    whole_steps = total_length // max_length
-    remaining_length = total_length % max_length
+    whole_steps = total_length // step_distance
+    remaining_length = total_length % step_distance
     for i in range(whole_steps):
-        distances[i] = walking_distance
+        distances[i] = step_distance
     if remaining_length < 0.5:
         diff = 0.5 - remaining_length
-        distances[total_steps-1] = diff
+        distances[total_steps-1] = step_distance - diff
+        remaining_length = diff + remaining_length
     distances[total_steps] = remaining_length
     return distances
+
+
