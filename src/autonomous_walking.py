@@ -18,7 +18,7 @@ def walking(input_length):
     distances[total_steps] = remaining_length
     return distances
 
-def main(input_length):
+def main():
     input_length = float(input("Enter length:"))
     if abs(input_length) > 1.2:
         return walking(input_length)
@@ -26,6 +26,3 @@ def main(input_length):
         rospy.loginfo("Length input too small, try again with a larger or smaller value than 0.5 or -0.5")
     else:
         return input_length
-
-
-
