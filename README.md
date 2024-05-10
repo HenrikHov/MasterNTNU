@@ -1,4 +1,4 @@
-This project uses ROS Noetic, an essential middleware for robot control, and runs on Ubuntu 20.04. Python 3 is used for all development. The project requires a setup process involving workspace directories and Catkin, the ROS build system. Due to a non-disclosure agreement (NDA) with Blu, detailed setup information cannot be shared, but a general overview is provided below.
+This project uses ROS Noetic and runs on Ubuntu 20.04. Python 3 is used for all development. The project requires a setup process involving workspace directories and Catkin, the ROS build system. Due to a non-disclosure agreement (NDA), detailed setup information cannot be shared, but a general overview is provided below.
 
 ## Linux OS and ROS Noetic
 
