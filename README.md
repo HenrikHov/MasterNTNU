@@ -60,7 +60,7 @@ This project uses ROS Noetic and runs on Ubuntu 20.04. Python 3 is used for all 
 - **single_ended.launch**: `roslaunch <package_name> single_ended.launch`
 - **double_ended.launch**: `roslaunch <package_name> double_ended.launch`
 
-After implementing these steps, initiate the digital twin in the desired launch file to test the home positioning and docking source code.
+After implementing these steps, clone and set up this repo to initiate the digital twin in the desired launch file to test the home positioning and docking source code.
 
 To test the autonomous movements of the digital twin with proximity_sensors.launch, run:
 `rosrun <package_name> autonomous_launcher.py`
