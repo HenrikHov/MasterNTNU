@@ -14,12 +14,12 @@ This project uses ROS Noetic, an essential middleware for robot control, and run
 
 1. **Create Workspace**:
     - Open a terminal and source ROS: `source /opt/ros/noetic/setup.bash`
-    - Create a new directory: `mkdir -p ~/catkin_ws/src`
+    - Create a new directory: `mkdir -p ~/mbot_ws/src`
 2. **Directory and Source File**:
-    - Navigate to the workspace: `cd ~/catkin_ws/src`
+    - Navigate to the workspace: `cd ~/mbot_ws/src`
     - Initialize Catkin: `catkin_init_workspace`
 3. **Initialize Catkin**:
-    - Go back to the workspace root: `cd ~/catkin_ws`
+    - Go back to the workspace root: `cd ~/mbot_ws`
     - Build with Catkin: `catkin_make`
 4. **GitHub Repositories**:
     - Clone the required repositories if available within the NDA constraints: `git clone <repository_url>`
@@ -27,21 +27,21 @@ This project uses ROS Noetic, an essential middleware for robot control, and run
 ## Python Virtual Environment and Sourcing
 
 1. **Virtual Environment Setup**:
-    - Navigate to the workspace: `cd ~/catkin_ws`
-    - Create a virtual environment: `python3 -m venv .venv/MonkeyBot`
+    - Navigate to the workspace: `cd ~/mbot_ws`
+    - Create a virtual environment: `python3 -m venv .venv/mBot`
 2. **Activation**:
     - Add this function to `.bashrc` to source both ROS and the Python environment:
     ```bash
-    function MonkeyBot() {
-        source ~/catkin_ws/devel/setup.bash
-        source ~/catkin_ws/.venv/MonkeyBot/bin/activate
+    function mBot() {
+        source ~/mbot_ws/devel/setup.bash
+        source ~/mbot_ws/.venv/mBot/bin/activate
     }
     ```
-3. **Execute**: Type `MonkeyBot` to activate the combined environment.
+3. **Execute**: Type `mBot` to activate the combined environment.
 
 ## Building with Catkin
 
-1. **Activate Environment**: Make sure the `MonkeyBot` environment is active: `MonkeyBot`
+1. **Activate Environment**: Make sure the `mBot` environment is active: `mBot`
 2. **Build**:
     - Use `catkin build` to compile the ROS packages: `catkin build`
 3. **Source**:
