@@ -52,7 +52,7 @@ This project uses ROS Noetic, an essential middleware for robot control, and run
 1. **Install RabbitMQ**: 
     - `sudo apt install rabbitmq-server`
 2. **Start RabbitMQ**: 
-    - "docker run -it --network=host rabbitmq:3"
+    - `docker run -it --network=host rabbitmq:3`
 
 ## Launch Files
 
