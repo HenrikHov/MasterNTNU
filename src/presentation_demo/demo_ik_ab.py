@@ -109,8 +109,8 @@ def inverse_kinematics(configuration, end_state, init_length):
 
 
     # Set the error tolerances
-    eomg = 1e-50
-    ev = 1e-50
+    eomg = 1e-3
+    ev = 1e-3
     attempt = 0
 
     rospy.loginfo("Calculating inverse kinematics...")
