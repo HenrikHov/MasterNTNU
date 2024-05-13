@@ -52,7 +52,7 @@ This project uses ROS Noetic and runs on Ubuntu 20.04. Python 3 is used for all 
 1. **Install RabbitMQ**: 
     - `sudo apt install rabbitmq-server`
 2. **Start RabbitMQ**: 
-    - `docker run -it --network=host rabbitmq:3`
+    - `sudo docker run -it --network=host rabbitmq:3`
 
 ## Launch Files
 
