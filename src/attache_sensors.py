@@ -33,5 +33,5 @@ def walking_sensor(multiple_sensors):
     return distances
 
 def main():
-    multiple_sensors = str(input("Attache multiple sensors?[y/n]"))
+    multiple_sensors = str(input("Attach multiple sensors?[y/n]"))
     walking_sensor(multiple_sensors)
